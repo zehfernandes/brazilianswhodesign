@@ -10,11 +10,11 @@ We encourage you to create your directory featured a list of any professionals y
 
 ### Link your spreedsheet
 
-1 - Duplicate [this spreedhsheet template](https://docs.google.com/spreadsheets/d/12LLA-NoHin0zQfmpEblgMjd260bmriLMowBAH1QDOhI/edit?usp=sharing)
-2 - Go to File > Publish to the Web > Publish
-3 - Copy the id between /spreadsheets/ and /edit in the url: 
-	> https://docs.google.com/spreadsheets/d/__1fvz34wY6phWDJsuIneqvOoZRPfo6CfJyPg1BYgHt59k__/edit
-4 - Paste the ID in the file `pages/api/designers.js`
+1. Duplicate [this spreedhsheet template](https://docs.google.com/spreadsheets/d/12LLA-NoHin0zQfmpEblgMjd260bmriLMowBAH1QDOhI/edit)
+2. Go to File > Publish to the Web > Publish
+3. Copy the id between /spreadsheets/ and /edit in the url: 
+	> [https://docs.google.com/spreadsheets/d/__12LLA-NoHin0zQfmpEblgMjd260bmriLMowBAH1QDOhI__/edit](https://docs.google.com/spreadsheets/d/12LLA-NoHin0zQfmpEblgMjd260bmriLMowBAH1QDOhI/edit)
+4. Paste the ID in the file [`pages/api/designers.js`](https://github.com/zehfernandes/brazilianswhodesign/blob/main/pages/api/designers.js)
 
 ### Install the dependencies
 
