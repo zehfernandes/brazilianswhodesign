@@ -171,11 +171,11 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
           {designers != null ? (
             <tbody>
               {designers.map((d, i) => (
-                <tr key={`${d.name}-${i}`} onClick={() => window.open(d.link)}>
-                  <td>{d.name}</td>
-                  <td className="thsize-aux dn">{d.location}</td>
-                  <td className="thsize-aux">{d.expertise}</td>
-                  <td className="thsize-link">→</td>
+                <tr key={`${d.name}-${i}`}>
+                  <td><a href={d.link}>{d.name}</a></td>
+                  <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
+                  <td className="thsize-aux"><a href={d.link}>{d.expertise}</a></td>
+                  <td className="thsize-link"><a href={d.link}>→</a></td>
                 </tr>
               ))}
             </tbody>
@@ -208,6 +208,19 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
           .thsize-aux {
             width: 30%;
           }
+        }
+
+        tbody a {
+          width: 100%;
+          padding-bottom: 0.6em;
+          padding-top: 0.6em;
+          color: inherit;
+          display: inline-block;
+        }
+
+        table tbody td {
+          padding-top: 0;
+          padding-bottom: 0;
         }
       `}</style>
 
