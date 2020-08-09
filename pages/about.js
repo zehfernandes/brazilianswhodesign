@@ -151,22 +151,7 @@ export default function Home({ designers }) {
 
           <h3>How did you build this?</h3>
           <p>
-            Brazilians Who Design was built on top of the tech stack that{" "}
-            <a className="link" href="https://twitter.com/julesforrest">
-              Jules Forrest
-            </a>{" "}
-            kindly made available on{" "}
-            <a className="link" href="">
-              Github
-            </a>{" "}
-            after building{" "}
-            <a
-              className="link"
-              href="https://github.com/julesforrest/womenwhodesign"
-            >
-              Women Who Design
-            </a>
-            . Thanks to Caio Braga, Rafael Frota, Karina Sirqueira, Al Lucca,
+            Brazilians Who Design is <a className="link" href="https://github.com/zehfernandes/brazilianswhodesign">open source</a> for you create your own showcase. Thanks to Caio Braga, Rafael Frota, Karina Sirqueira, Al Lucca,
             Bruno Oyama, Fabio Sasso, Daniel Furtado, Rodrigo Muniz, Lucas
             Falcão, for the help of gathering the initial list of designers.
           </p>
