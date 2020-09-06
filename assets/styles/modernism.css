@@ -139,6 +139,11 @@ a.link {
   transition: color 150ms ease;
 }
 
+p a.link {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
 a.link:before {
   width: 100%;
   height: 90%;
