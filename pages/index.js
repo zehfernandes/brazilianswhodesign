@@ -119,7 +119,7 @@ export default function Home({ designers, filters }) {
     <div
       className="container"
       style={{
-        overflow: isReady ? "hidden" : "auto",
+        overflow: isReady ? "hidden" : "visible",
       }}
     >
       <Head>
