@@ -1,7 +1,7 @@
 export default function Analytics() {
   return (
     <>
-      <script
+      {/* <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-168079933-1"
       />
@@ -17,7 +17,7 @@ export default function Analytics() {
             gtag("config", "UA-XXXXXXXX-X");
           `,
         }}
-      />
+      /> */}
     </>
   );
 }
