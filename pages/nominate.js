@@ -3,21 +3,34 @@ import Link from "next/link";
 import MetaTags from "../components/Metatags.js";
 import Analytics from "../components/Analytics.js";
 
-export default function Nominate({ technologists }) {
+export default function Nominate({ designers }) {
   return (
     <div className="container">
       <Head>
-        <title>Hawaiians in Tech | Nominate</title>
+        <title>Brazilians Who Design | Nomiate</title>
         <link rel="icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
 
+      <div style={{ width: "100%", position: "relative", height: "100vh" }}>
+        <iframe
+          id="typeform-full"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          allow="camera; microphone; autoplay; encrypted-media;"
+          src="https://form.typeform.com/to/bbrPUqMe"
+        ></iframe>{" "}
+        <script
+          type="text/javascript"
+          src="https://embed.typeform.com/embed.js"
+        ></script>
+        <Analytics />
+      </div>
+
       <Link href="/" shallow={true}>
         <a className="auxNav arrowback">←</a>
       </Link>
-
-      <h1>Coming Soon</h1>
-
       <style jsx global>{`
         html,
         body {

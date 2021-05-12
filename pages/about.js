@@ -23,11 +23,11 @@ const container = {
   },
 };
 
-export default function Home({ technologists }) {
+export default function Home({ designers }) {
   return (
     <div className="container">
       <Head>
-        <title>Hawaiians in Tech | About</title>
+        <title>Brazilians Who Design | About</title>
         <link rel="icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
@@ -38,7 +38,7 @@ export default function Home({ technologists }) {
 
       <Title
         className="title m0 p0"
-        text="Hawaiians*in&nbsp;tech&nbsp;is&nbsp;a"
+        text="Brazilians*who&nbsp;design&nbsp;is&nbsp;a"
         noAnimation
       />
 
@@ -51,12 +51,12 @@ export default function Home({ technologists }) {
         <p className="f1 extend">
           <motion.span variants={item}>place to showcase</motion.span>{" "}
           <motion.span variants={item}>the work of talented</motion.span>{" "}
-          <motion.span variants={item}>Native Hawaiian technologists</motion.span>{" "}
-          <motion.span variants={item}>to the world. The goal</motion.span>{" "}
+          <motion.span variants={item}>Brazilian designers to</motion.span>{" "}
+          <motion.span variants={item}>the world. The goal</motion.span>{" "}
           <motion.span variants={item}>is to inspire new</motion.span>{" "}
-          <motion.span variants={item}>technologists to diversify</motion.span>{" "}
+          <motion.span variants={item}>designers to diversify</motion.span>{" "}
           <motion.span variants={item}>
-            their references, experienced technologists
+            their references, experienced designers
           </motion.span>{" "}
           <motion.span variants={item}>
             to diversity their network, and companies to diversify their teams.
@@ -68,7 +68,7 @@ export default function Home({ technologists }) {
         <div className="col-left">
           <h3>How can I nominate someone?</h3>
           <p>
-            If you know a Native Hawaiian technologist whose work or voice is valuable to
+            If you know a Brazilian designer whose work or voice is valuable to
             the design industry, please{" "}
             <Link href="/nominate">
               <a className="link">fill out this form</a>
@@ -77,9 +77,18 @@ export default function Home({ technologists }) {
             them. You can choose to link to their portfolio, to their Linkedin,
             or to other social profiles — any link that you feel best represents
             how that person is making a difference in the industry. We decided
-            not to collect or display the technologist’s photo because we wanted the
+            not to collect or display the designer’s photo because we wanted the
             repository to be less about what someone looks like and more about
             how they’re making an impact in the industry.
+          </p>
+
+          <h3>Why are featuring artists as well?</h3>
+          <p>
+            We wanted to showcase not only contemporary Brazilian design, but
+            also leverage all the visibility that this project is getting to
+            celebrate the history of design in our country. Every time you
+            reload the website there’s a new featured Brazilian designer you can
+            learn more about.
           </p>
 
           <h3>How did you come up with this idea?</h3>
@@ -93,18 +102,13 @@ export default function Home({ technologists }) {
               </a>
             </li>
             <li>
-              <a className="link" href="https://brazilianswho.design/">
-                Brazilians Who Design
-              </a>
-            </li>
-            <li>
               <a className="link" href="https://www.womenwhodraw.com/">
                 Women Who Draw
               </a>
             </li>
             <li>
               <a className="link" href="http://www.28blacks.com/">
-                28 Black technologists
+                28 Black Designers
               </a>
             </li>
             <li>
@@ -147,11 +151,11 @@ export default function Home({ technologists }) {
 
           <h3>How did you build this?</h3>
           <p>
-            Hawaiians in Tech is{" "}
+            Brazilians Who Design is{" "}
             <a
               className="link"
               target="_blank"
-              href="https://github.com/hawaiians/hawaiiansintech"
+              href="https://github.com/zehfernandes/brazilianswhodesign"
             >
               open source
             </a>{" "}
@@ -167,18 +171,68 @@ export default function Home({ technologists }) {
             </a>
             <br />
             <br />
+            Sites built using our open-source platform:
           </p>
+          <ul>
+            <li>
+              <a className="link" href="https://uruguayanswho.design/">
+                uruguayanswho.design
+              </a>
+            </li>
+            <li>
+              <a className="link" href="https://spaniardswho.design/">
+                spaniardswho.design
+              </a>
+            </li>
+            <li>
+              <a className="link" href="https://britswho.design/">
+                britswho.design
+              </a>
+            </li>
+          </ul>
+          <br />
+          <p>
+            Thanks to Caio Braga, Rafael Frota, Karina Sirqueira, Al Lucca,
+            Bruno Oyama, Fabio Sasso, Daniel Furtado, Rodrigo Muniz, Lucas
+            Falcão, for the help of gathering the initial list of designers.
+          </p>
+
+          <h3>Who’s behind this?</h3>
+          <ul>
+            <li>
+              <a className="link" href="https://twitter.com/zehf">
+                Zeh Fernandes
+              </a>
+            </li>
+            <li>
+              <a className="link" href="http://twitter.com/fabriciot">
+                Fabricio Teixeira
+              </a>
+            </li>
+            <li>
+              <a className="link" href="http://uxdesign.cc/">
+                UX Collective
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="col-right">
           <h3>How can I remove my name?</h3>
           <p>
             If you’ve been added to the directory and would like to opt-out or
             make an edit to your profile, please send us a message at
-            hawaiiansintech@tellaho.com.
+            hello@uxdesign.cc.
+          </p>
+          <h3>Why is my nomination taking so long to show?</h3>
+          <p>
+            We update this website once a week to include new names. To ensure a
+            healthy gender balance on this website, some nominations might take
+            longer to appear. In the meantime, try nominating a designer who
+            identifies as a woman or non-binary.
           </p>
         </div>
 
-        {/* <Analytics /> */}
+        <Analytics />
       </div>
 
       <style jsx>{`

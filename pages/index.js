@@ -9,20 +9,19 @@ import Analytics from "../components/Analytics.js";
 import FilterSVG from "../components/Icons/FilterSVG.js";
 
 export async function getStaticProps() {
-  console.log(process.env.NODE_ENV);
   const origin =
     process.env.NODE_ENV !== "production"
       ? "http://localhost:3000"
-      : "https://hawaiiansintech.org/";
+      : "https://brazilianswho.design/";
 
-  const res = await fetch(`${origin}/api/technologists`);
-  const technologists = await res.json();
+  const res = await fetch(`${origin}/api/designers`);
+  const designers = await res.json();
 
   let uniqueExpertise = new Set();
-  technologists.map((d) => uniqueExpertise.add(d.expertise));
+  designers.map((d) => uniqueExpertise.add(d.expertise));
 
   let uniqueLocation = new Set();
-  technologists.map((d) => uniqueLocation.add(d.location));
+  designers.map((d) => uniqueLocation.add(d.location));
 
   let expertises = Array.from(uniqueExpertise).map((e) => {
     return { label: e, active: false, category: "expertise" };
@@ -38,13 +37,13 @@ export async function getStaticProps() {
 
   return {
     props: {
-      technologists,
+      designers,
       filters,
     },
   };
 }
 
-export default function Home({ technologists, filters }) {
+export default function Home({ designers, filters }) {
   const [isReady, setIsReady] = useState(false);
   const [designersList, setDesignersList] = useState(null);
   const [filterIsOpen, setFilterIsOpen] = useState(false);
@@ -52,7 +51,7 @@ export default function Home({ technologists, filters }) {
   const [filterCategory, setFilterCategory] = useState(null);
 
   useEffect(() => {
-    setDesignersList(shuffle(technologists).sort((a, b) => a.order - b.order));
+    setDesignersList(shuffle(designers).sort((a, b) => a.order - b.order));
   }, []);
 
   // Filter
@@ -76,7 +75,7 @@ export default function Home({ technologists, filters }) {
 
     setFilterList(newFilter);
     setDesignersList(
-      shuffle(technologists).sort((a, b) => a.featured - b.featured)
+      shuffle(designers).sort((a, b) => a.featured - b.featured)
     );
   };
 
@@ -107,7 +106,7 @@ export default function Home({ technologists, filters }) {
     // Filter render list
     if (activeFilters.length > 0)
       setDesignersList(
-        technologists.filter(
+        designers.filter(
           (d) =>
             activeFilters.includes(d.expertise) &&
             activeFilters.includes(d.location)
@@ -124,14 +123,14 @@ export default function Home({ technologists, filters }) {
       }}
     >
       <Head>
-        <title>Hawaiians in Tech</title>
+        <title>Brazilians Who Design</title>
         <link id="favicon" rel="alternate icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
 
       {!isReady ? (
         <Content
-          technologists={designersList}
+          designers={designersList}
           handleOpenFilter={handleOpenFilter}
           onClick={filterIsOpen ? handleCloseFilter : undefined}
           className={filterIsOpen ? "filterIsOpen" : ""}
@@ -159,7 +158,7 @@ export default function Home({ technologists, filters }) {
   );
 }
 
-function Content({ technologists, handleOpenFilter, className, onClick }) {
+function Content({ designers, handleOpenFilter, className, onClick }) {
   const tableHeaderRef = useRef();
 
   useEffect(() => {
@@ -181,7 +180,7 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
     <div className={className} onClick={onClick}>
       <Nav />
 
-      <Title className="title m0 p0" text="Hawaiians*in&nbsp;tech" />
+      <Title className="title m0 p0" text="Brazilians*who&nbsp;design" />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -215,9 +214,9 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
               <td className="thsize-link"></td>
             </tr>
           </thead>
-          {technologists != null ? (
+          {designers != null ? (
             <tbody>
-              {technologists.map((d, i) => (
+              {designers.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
                   <td><a href={d.link}>{d.name}</a></td>
                   <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
@@ -271,7 +270,7 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
         }
       `}</style>
 
-      {/* <Analytics /> */}
+      <Analytics />
     </div>
   );
 }
