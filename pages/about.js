@@ -163,13 +163,13 @@ export default function Home({ designers }) {
           <p>
             Currently, you can join our {" "}
             <a className="link" href="https://discord.gg/nx8rsFfW">Hawaiians in Tech Discord</a>
-            to connect with our community, get information on events, find new project opporunities, and more.
+            to connect with our community, get information on events, find new project opportunities, and more.
           </p>
           <h3>How can I remove my name?</h3>
           <p>
             If you’ve been added to the directory and would like to opt-out or
-              make an edit to your profile, please send either emmit.parubrub@gmail.com or 
-              howzit@tellaho.com an email, or send us a message in our {" "}
+              make an edit to your profile, please send an email to either emmit.parubrub@gmail.com or 
+              howzit@tellaho.com, or send us a message in our {" "}
               <a className="link" href="https://discord.gg/nx8rsFfW">Discord</a>.
           </p>
           
