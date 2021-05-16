@@ -27,7 +27,7 @@ export default function Home({ designers }) {
   return (
     <div className="container">
       <Head>
-        <title>Brazilians Who Design | About</title>
+        <title>Hawaiians in Technology | About</title>
         <link rel="icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
@@ -38,7 +38,7 @@ export default function Home({ designers }) {
 
       <Title
         className="title m0 p0"
-        text="Brazilians*who&nbsp;design&nbsp;is&nbsp;a"
+        text="Hawaiians*in&nbsp;Technology&nbsp;is&nbsp;a"
         noAnimation
       />
 
@@ -49,18 +49,10 @@ export default function Home({ designers }) {
         exit="hidden"
       >
         <p className="f1 extend">
-          <motion.span variants={item}>place to showcase</motion.span>{" "}
-          <motion.span variants={item}>the work of talented</motion.span>{" "}
-          <motion.span variants={item}>Brazilian designers to</motion.span>{" "}
-          <motion.span variants={item}>the world. The goal</motion.span>{" "}
-          <motion.span variants={item}>is to inspire new</motion.span>{" "}
-          <motion.span variants={item}>designers to diversify</motion.span>{" "}
-          <motion.span variants={item}>
-            their references, experienced designers
-          </motion.span>{" "}
-          <motion.span variants={item}>
-            to diversity their network, and companies to diversify their teams.
-          </motion.span>
+          <motion.span variants={item}>directory and community of Native Hawaiians</motion.span>{" "}
+          <motion.span variants={item}>in the technology industry. The goal</motion.span>{" "}
+          <motion.span variants={item}>is to connect, inspire, provide representation, and</motion.span>{" "}
+          <motion.span variants={item}>promote the precense of Native Hawaiians who work in the technology industry.</motion.span>{" "}
         </p>
       </motion.div>
 
@@ -68,32 +60,22 @@ export default function Home({ designers }) {
         <div className="col-left">
           <h3>How can I nominate someone?</h3>
           <p>
-            If you know a Brazilian designer whose work or voice is valuable to
-            the design industry, please{" "}
+            If you or someone you know is a Native Hawaiian who works in the technology industry,
+            and wants to be part of this directory and community, please{" "}
             <Link href="/nominate">
               <a className="link">fill out this form</a>
             </Link>{" "}
-            with their information and a few words about why you're nominating
-            them. You can choose to link to their portfolio, to their Linkedin,
-            or to other social profiles — any link that you feel best represents
-            how that person is making a difference in the industry. We decided
-            not to collect or display the designer’s photo because we wanted the
-            repository to be less about what someone looks like and more about
-            how they’re making an impact in the industry.
-          </p>
-
-          <h3>Why are featuring artists as well?</h3>
-          <p>
-            We wanted to showcase not only contemporary Brazilian design, but
-            also leverage all the visibility that this project is getting to
-            celebrate the history of design in our country. Every time you
-            reload the website there’s a new featured Brazilian designer you can
-            learn more about.
+            with your/their information and a link to your/their social profile. 
+            The link can be to a Github, a Linkedin, a website, etc...
           </p>
 
           <h3>How did you come up with this idea?</h3>
           <p>
-            We didn’t. This project is inspired by our fantastic sibling sites:
+            We didn’t. This website is a fork of 
+              <a className="link" href="https://brazilianswho.design/">
+              Brazillians Who Design
+                </a>{", "}
+            who have also credited inspiration from their sibling sites:
           </p>
           <ul>
             <li>
@@ -148,88 +130,49 @@ export default function Home({ designers }) {
               </a>
             </li>
           </ul>
-
           <h3>How did you build this?</h3>
           <p>
-            Brazilians Who Design is{" "}
-            <a
-              className="link"
-              target="_blank"
-              href="https://github.com/zehfernandes/brazilianswhodesign"
-            >
-              open source
-            </a>{" "}
-            for you create your own showcase. It is built inspired by the tech
-            stack that Jules Forrest kindly made available on Github after
-            building{" "}
-            <a
-              className="link"
-              target="_blank"
-              href="https://github.com/julesforrest/womenwhodesign"
-            >
-              Women Who Design.
-            </a>
-            <br />
-            <br />
-            Sites built using our open-source platform:
+            The site is a fork off of Brazilians Who Design, which is{" "}
+              <a
+                className="link"
+                target="_blank"
+                href="https://github.com/zehfernandes/brazilianswhodesign"
+              >
+              open source</a>. Please visit the {" "}
+              <a className="link" href="https://brazilianswho.design/about">
+                Brazillians Who Design
+              </a>{" "}
+              site for more information.
           </p>
-          <ul>
-            <li>
-              <a className="link" href="https://uruguayanswho.design/">
-                uruguayanswho.design
-              </a>
-            </li>
-            <li>
-              <a className="link" href="https://spaniardswho.design/">
-                spaniardswho.design
-              </a>
-            </li>
-            <li>
-              <a className="link" href="https://britswho.design/">
-                britswho.design
-              </a>
-            </li>
-          </ul>
-          <br />
-          <p>
-            Thanks to Caio Braga, Rafael Frota, Karina Sirqueira, Al Lucca,
-            Bruno Oyama, Fabio Sasso, Daniel Furtado, Rodrigo Muniz, Lucas
-            Falcão, for the help of gathering the initial list of designers.
-          </p>
-
           <h3>Who’s behind this?</h3>
           <ul>
             <li>
-              <a className="link" href="https://twitter.com/zehf">
-                Zeh Fernandes
+              <a className="link" href="https://www.linkedin.com/in/emmit-parubrub/">
+                Emmit Parubrub
               </a>
             </li>
             <li>
-              <a className="link" href="http://twitter.com/fabriciot">
-                Fabricio Teixeira
-              </a>
-            </li>
-            <li>
-              <a className="link" href="http://uxdesign.cc/">
-                UX Collective
+              <a className="link" href="https://twitter.com/tellaho_">
+                Taylor Ho
               </a>
             </li>
           </ul>
         </div>
         <div className="col-right">
+          <h3>How can I get more involved with the community?</h3>
+          <p>
+            Currently, you can join our {" "}
+            <a className="link" href="https://discord.gg/nx8rsFfW">Hawaiians in Tech Discord</a>
+            to connect with our community, get information on events, find new project opporunities, and more.
+          </p>
           <h3>How can I remove my name?</h3>
           <p>
             If you’ve been added to the directory and would like to opt-out or
-            make an edit to your profile, please send us a message at
-            hello@uxdesign.cc.
+              make an edit to your profile, please send either emmit.parubrub@gmail.com or 
+              howzit@tellaho.com an email, or send us a message in our {" "}
+              <a className="link" href="https://discord.gg/nx8rsFfW">Discord</a>.
           </p>
-          <h3>Why is my nomination taking so long to show?</h3>
-          <p>
-            We update this website once a week to include new names. To ensure a
-            healthy gender balance on this website, some nominations might take
-            longer to appear. In the meantime, try nominating a designer who
-            identifies as a woman or non-binary.
-          </p>
+          
         </div>
 
         <Analytics />

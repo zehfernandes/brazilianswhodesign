@@ -14,14 +14,14 @@ export async function getStaticProps() {
       ? "http://localhost:3000"
       : "https://brazilianswho.design/";
 
-  const res = await fetch(`${origin}/api/designers`);
-  const designers = await res.json();
+  const res = await fetch(`${origin}/api/technologists`);
+  const technologists = await res.json();
 
   let uniqueExpertise = new Set();
-  designers.map((d) => uniqueExpertise.add(d.expertise));
+  technologists.map((d) => uniqueExpertise.add(d.expertise));
 
   let uniqueLocation = new Set();
-  designers.map((d) => uniqueLocation.add(d.location));
+  technologists.map((d) => uniqueLocation.add(d.location));
 
   let expertises = Array.from(uniqueExpertise).map((e) => {
     return { label: e, active: false, category: "expertise" };
@@ -37,21 +37,21 @@ export async function getStaticProps() {
 
   return {
     props: {
-      designers,
+      technologists,
       filters,
     },
   };
 }
 
-export default function Home({ designers, filters }) {
+export default function Home({ technologists, filters }) {
   const [isReady, setIsReady] = useState(false);
-  const [designersList, setDesignersList] = useState(null);
+  const [technologistsList, setTechnologistsList] = useState(null);
   const [filterIsOpen, setFilterIsOpen] = useState(false);
   const [filterList, setFilterList] = useState(filters);
   const [filterCategory, setFilterCategory] = useState(null);
 
   useEffect(() => {
-    setDesignersList(shuffle(designers).sort((a, b) => a.order - b.order));
+    setTechnologistsList(shuffle(technologists).sort((a, b) => a.order - b.order));
   }, []);
 
   // Filter
@@ -74,8 +74,8 @@ export default function Home({ designers, filters }) {
     });
 
     setFilterList(newFilter);
-    setDesignersList(
-      shuffle(designers).sort((a, b) => a.featured - b.featured)
+    setTechnologistsList(
+      shuffle(technologists).sort((a, b) => a.featured - b.featured)
     );
   };
 
@@ -105,8 +105,8 @@ export default function Home({ designers, filters }) {
 
     // Filter render list
     if (activeFilters.length > 0)
-      setDesignersList(
-        designers.filter(
+      setTechnologistsList(
+        technologists.filter(
           (d) =>
             activeFilters.includes(d.expertise) &&
             activeFilters.includes(d.location)
@@ -123,14 +123,14 @@ export default function Home({ designers, filters }) {
       }}
     >
       <Head>
-        <title>Brazilians Who Design</title>
+        <title>Hawaiians in Technology</title>
         <link id="favicon" rel="alternate icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
 
       {!isReady ? (
         <Content
-          designers={designersList}
+          technologists={technologistsList}
           handleOpenFilter={handleOpenFilter}
           onClick={filterIsOpen ? handleCloseFilter : undefined}
           className={filterIsOpen ? "filterIsOpen" : ""}
@@ -158,7 +158,7 @@ export default function Home({ designers, filters }) {
   );
 }
 
-function Content({ designers, handleOpenFilter, className, onClick }) {
+function Content({ technologists, handleOpenFilter, className, onClick }) {
   const tableHeaderRef = useRef();
 
   useEffect(() => {
@@ -180,7 +180,7 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
     <div className={className} onClick={onClick}>
       <Nav />
 
-      <Title className="title m0 p0" text="Brazilians*who&nbsp;design" />
+      <Title className="title m0 p0" text="Hawaiians*in&nbsp;Technology" />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -214,9 +214,9 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
               <td className="thsize-link"></td>
             </tr>
           </thead>
-          {designers != null ? (
+          {technologists != null ? (
             <tbody>
-              {designers.map((d, i) => (
+              {technologists.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
                   <td><a href={d.link}>{d.name}</a></td>
                   <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
