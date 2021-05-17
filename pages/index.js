@@ -14,7 +14,7 @@ export async function getStaticProps() {
       ? "http://localhost:3000"
       : req.get('host');
 
-  const res = await fetch(`${origin}/api/designers`);
+  const res = await fetch(`${this.props.location.pathname}/api/designers`);
   const designers = await res.json();
 
   let uniqueExpertise = new Set();
