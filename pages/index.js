@@ -14,14 +14,14 @@ export async function getStaticProps() {
       ? "http://localhost:3000"
       : "https://brazilianswho.design/";
 
-  const res = await fetch(`${origin}/api/technologists`);
-  const technologists = await res.json();
+  const res = await fetch(`${origin}/api/designers`);
+  const designers = await res.json();
 
   let uniqueExpertise = new Set();
-  technologists.map((d) => uniqueExpertise.add(d.expertise));
+  designers.map((d) => uniqueExpertise.add(d.expertise));
 
   let uniqueLocation = new Set();
-  technologists.map((d) => uniqueLocation.add(d.location));
+  designers.map((d) => uniqueLocation.add(d.location));
 
   let expertises = Array.from(uniqueExpertise).map((e) => {
     return { label: e, active: false, category: "expertise" };
@@ -37,21 +37,21 @@ export async function getStaticProps() {
 
   return {
     props: {
-      technologists,
+      designers,
       filters,
     },
   };
 }
 
-export default function Home({ technologists, filters }) {
+export default function Home({ designers, filters }) {
   const [isReady, setIsReady] = useState(false);
-  const [technologistsList, setTechnologistsList] = useState(null);
+  const [designersList, setDesignersList] = useState(null);
   const [filterIsOpen, setFilterIsOpen] = useState(false);
   const [filterList, setFilterList] = useState(filters);
   const [filterCategory, setFilterCategory] = useState(null);
 
   useEffect(() => {
-    setTechnologistsList(shuffle(technologists).sort((a, b) => a.order - b.order));
+    setDesignersList(shuffle(designers).sort((a, b) => a.order - b.order));
   }, []);
 
   // Filter
@@ -74,8 +74,8 @@ export default function Home({ technologists, filters }) {
     });
 
     setFilterList(newFilter);
-    setTechnologistsList(
-      shuffle(technologists).sort((a, b) => a.featured - b.featured)
+    setDesignersList(
+      shuffle(designers).sort((a, b) => a.featured - b.featured)
     );
   };
 
@@ -105,8 +105,8 @@ export default function Home({ technologists, filters }) {
 
     // Filter render list
     if (activeFilters.length > 0)
-      setTechnologistsList(
-        technologists.filter(
+      setDesignersList(
+        designers.filter(
           (d) =>
             activeFilters.includes(d.expertise) &&
             activeFilters.includes(d.location)
@@ -130,7 +130,7 @@ export default function Home({ technologists, filters }) {
 
       {!isReady ? (
         <Content
-          technologists={technologistsList}
+          designers={designersList}
           handleOpenFilter={handleOpenFilter}
           onClick={filterIsOpen ? handleCloseFilter : undefined}
           className={filterIsOpen ? "filterIsOpen" : ""}
@@ -158,7 +158,7 @@ export default function Home({ technologists, filters }) {
   );
 }
 
-function Content({ technologists, handleOpenFilter, className, onClick }) {
+function Content({ designers, handleOpenFilter, className, onClick }) {
   const tableHeaderRef = useRef();
 
   useEffect(() => {
@@ -214,9 +214,9 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
               <td className="thsize-link"></td>
             </tr>
           </thead>
-          {technologists != null ? (
+          {designers != null ? (
             <tbody>
-              {technologists.map((d, i) => (
+              {designers.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
                   <td><a href={d.link}>{d.name}</a></td>
                   <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
