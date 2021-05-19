@@ -77,59 +77,49 @@ export default function Home({ technologists }) {
                 </a>{", "}
             who have also credited inspiration from their sibling sites:
           </p>
-          <ul>
-            <li>
+          <p>
               <a className="link" href="https://womenwho.design/">
                 Women Who Design
               </a>
-            </li>
-            <li>
+              <br></br>
               <a className="link" href="https://www.womenwhodraw.com/">
                 Women Who Draw
               </a>
-            </li>
-            <li>
+              <br></br>
               <a className="link" href="http://www.28blacks.com/">
                 28 Black Designers
               </a>
-            </li>
-            <li>
+              <br></br>
               <a className="link" href="https://www.latinxswhodesign.com/">
                 Latinx Who Design
               </a>
-            </li>
-            <li>
+              <br></br>
               <a className="link" href="https://queerdesign.club/">
                 Queer Design Club
               </a>
-            </li>
-            <li>
+              <br></br>
               <a
                 className="link"
                 href="https://filipinos-who-design.webflow.io/"
               >
                 Filipinos Who Design
               </a>
-            </li>
-            <li>
+              <br></br>
               <a
                 className="link"
                 href="https://filipinos-who-design.webflow.io/"
               >
                 People Of Craft
               </a>
-            </li>
-            <li>
+              <br></br>
               <a className="link" href="https://indianswhodesign.in/">
                 Indians Who Design
               </a>
-            </li>
-            <li>
+              <br></br>
               <a className="link" href="https://www.apiwho.design/">
                 Asian & Pacific Islanders Who Design
               </a>
-            </li>
-          </ul>
+          </p>
           <h3>How did you build this?</h3>
           <p>
             The site is a fork off of Brazilians Who Design, which is{" "}
@@ -145,18 +135,15 @@ export default function Home({ technologists }) {
               site for more information.
           </p>
           <h3>Who’s behind this?</h3>
-          <ul>
-            <li>
+          <p>
               <a className="link" href="https://www.linkedin.com/in/emmit-parubrub/">
                 Emmit Parubrub
               </a>
-            </li>
-            <li>
+              <br></br>
               <a className="link" href="https://twitter.com/tellaho_">
                 Taylor Ho
               </a>
-            </li>
-          </ul>
+          </p>
         </div>
         <div className="col-right">
           <h3>How can I get more involved with the community?</h3>

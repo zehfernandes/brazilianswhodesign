@@ -63,10 +63,11 @@ export default function Filter({
         .sidebar {
           width: 100%;
           max-width: 420px;
-          background: #fff;
-          color: #000;
+          background: #E5E5E5;
+          color: #353535;
           padding: 2.5rem;
           min-height: 100vh;
+          border-left: 5px solid #353535;
         }
 
         .close {
@@ -101,10 +102,13 @@ function FilterItem({ label, active, onClick }) {
           margin: 0.1rem 0;
         }
 
+        .filterItem:hover {
+          color: #CC6C13;
+        }
+
         .check {
           width: 1.7rem;
           height: 1.7rem;
-          /*background: #fff;
           border-radius: 6px; */
         }
       `}</style>
