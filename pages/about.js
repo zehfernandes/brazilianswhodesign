@@ -23,7 +23,7 @@ const container = {
   },
 };
 
-export default function Home({ designers }) {
+export default function Home({ technologists }) {
   return (
     <div className="container">
       <Head>
