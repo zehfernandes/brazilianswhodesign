@@ -63,11 +63,11 @@ export default function Filter({
         .sidebar {
           width: 100%;
           max-width: 420px;
-          background: #E5E5E5;
-          color: #353535;
+          background: var(--color-background);
+          color: var(--color-text);
           padding: 2.5rem;
           min-height: 100vh;
-          border-left: 5px solid #353535;
+          border-left: 5px solid var(--color-text);
         }
 
         .close {
@@ -103,7 +103,7 @@ function FilterItem({ label, active, onClick }) {
         }
 
         .filterItem:hover {
-          color: #CC6C13;
+          color: var(--color-link);
         }
 
         .check {
