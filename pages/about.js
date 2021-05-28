@@ -48,10 +48,10 @@ export default function Home({ technologists }) {
         exit="hidden"
       >
         <p className="f1 extend">
-          <motion.span variants={item}>directory and community of Native Hawaiians</motion.span>{" "}
-          <motion.span variants={item}>in the technology industry. The goal</motion.span>{" "}
-          <motion.span variants={item}>is to connect, inspire, provide representation, and</motion.span>{" "}
-          <motion.span variants={item}>promote the precense of Native Hawaiians who work in the technology industry.</motion.span>{" "}
+          <motion.span variants={item}>directory and community of <strong>Native Hawaiians</strong> in the</motion.span>{" "}
+          <motion.span variants={item}><strong>technology industry</strong>. The goal is to connect, inspire, provide</motion.span>{" "}
+          <motion.span variants={item}>representation, and promote the presence of Native Hawaiians</motion.span>{" "}
+          <motion.span variants={item}>who work in the technology industry.</motion.span>{" "}
         </p>
       </motion.div>
 
@@ -166,7 +166,7 @@ export default function Home({ technologists }) {
       <style jsx>{`
         .extend {
           margin: 0;
-          max-width: 17ch;
+          max-width: 24ch;
         }
 
         .moreabout {
