@@ -20,7 +20,7 @@ export default function MetaTags() {
       />
       <meta
         property="og:image"
-        content="https://hawaiiansintech.org/img/HitLogoNoBackground.png"
+        content="https://hawaiiansintech.org/images/HitLogoNoBackground.png"
       />
 
       {/* <!-- Twitter --/> */}
@@ -33,7 +33,7 @@ export default function MetaTags() {
       />
       <meta
         property="twitter:image"
-        content="https://hawaiiansintech.org/img/HitLogoNoBackground.png"
+        content="https://hawaiiansintech.org/images/HitLogoNoBackground.png"
       />
     </>
   );

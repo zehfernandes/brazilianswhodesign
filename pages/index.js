@@ -13,7 +13,7 @@ export async function getStaticProps() {
   const origin =
     process.env.NODE_ENV !== "production"
       ? "http://localhost:3000"
-      : "https://hawaiiansintech-93k9cfzcn-hawaiians.vercel.app";
+      : "https://hawaiiansintech.org";
 
   const res = await fetch(`${origin}/api/technologists`);
   const technologists = await res.json();
