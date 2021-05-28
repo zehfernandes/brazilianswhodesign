@@ -139,7 +139,7 @@ export default function Home({ technologists }) {
                 Emmit Parubrub
               </a>
               <br></br>
-              <a className="link" href="https://twitter.com/tellaho_">
+              <a className="link" href="https://twitter.com/tellaho">
                 Taylor Ho
               </a>
           </p>
