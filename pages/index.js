@@ -220,10 +220,10 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
             <tbody>
               {technologists.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
-                  <td><a href={d.link}>{d.name}</a></td>
-                  <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
-                  <td className="thsize-aux"><a href={d.link}>{d.role}</a></td>
-                  <td className="thsize-link"><a href={d.link}>→</a></td>
+                  <td><a href={d.link} target="_blank">{d.name}</a></td>
+                  <td className="thsize-aux dn"><a href={d.link} target="_blank">{d.location}</a></td>
+                  <td className="thsize-aux"><a href={d.link} target="_blank">{d.role}</a></td>
+                  <td className="thsize-link"><a href={d.link} target="_blank">→</a></td>
                 </tr>
               ))}
             </tbody>
