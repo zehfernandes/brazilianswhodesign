@@ -3,7 +3,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
-import Analytics from "../components/Analytics.js";
 
 const item = {
   hidden: { opacity: 0, y: "15%" },
@@ -162,7 +161,6 @@ export default function Home({ technologists }) {
           
         </div>
 
-        <Analytics />
       </div>
 
       <style jsx>{`

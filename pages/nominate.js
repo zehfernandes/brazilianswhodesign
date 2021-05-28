@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import MetaTags from "../components/Metatags.js";
-import Analytics from "../components/Analytics.js";
 
 export default function Nominate({ technologists }) {
   return (
@@ -25,7 +24,6 @@ export default function Nominate({ technologists }) {
           type="text/javascript"
           src="https://embed.typeform.com/embed.js"
         ></script>
-        <Analytics />
       </div>
 
       <Link href="/" shallow={true}>

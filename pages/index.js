@@ -5,7 +5,6 @@ import Nav from "../components/Nav.js";
 import Filter from "../components/Filter.js";
 import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
-import Analytics from "../components/Analytics.js";
 import FilterSVG from "../components/Icons/FilterSVG.js";
 import HitLogo from "../components/HitLogo.js";
 
@@ -273,7 +272,6 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
         }
       `}</style>
 
-      <Analytics />
     </div>
   );
 }
