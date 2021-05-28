@@ -7,6 +7,7 @@ import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
 import Analytics from "../components/Analytics.js";
 import FilterSVG from "../components/Icons/FilterSVG.js";
+import HitLogo from "../components/HitLogo.js";
 
 export async function getStaticProps() {
   const origin =
@@ -17,14 +18,14 @@ export async function getStaticProps() {
   const res = await fetch(`${origin}/api/technologists`);
   const technologists = await res.json();
 
-  let uniqueExpertise = new Set();
-  technologists.map((d) => uniqueExpertise.add(d.expertise));
+  let uniqueRole = new Set();
+  technologists.map((d) => uniqueRole.add(d.role));
 
   let uniqueLocation = new Set();
   technologists.map((d) => uniqueLocation.add(d.location));
 
-  let expertises = Array.from(uniqueExpertise).map((e) => {
-    return { label: e, active: false, category: "expertise" };
+  let roles = Array.from(uniqueRole).map((e) => {
+    return { label: e, active: false, category: "role" };
   });
 
   let locations = Array.from(uniqueLocation)
@@ -33,7 +34,7 @@ export async function getStaticProps() {
       return { label: e, active: false, category: "location" };
     });
 
-  let filters = expertises.concat(locations);
+  let filters = roles.concat(locations);
 
   return {
     props: {
@@ -86,7 +87,7 @@ export default function Home({ technologists, filters }) {
 
     // Get Each column
     let filterExpert = filterList
-      .filter((f) => f.category == "expertise")
+      .filter((f) => f.category == "role")
       .map((d) => d.label);
     let filterLocation = filterList
       .filter((f) => f.category == "location")
@@ -108,7 +109,7 @@ export default function Home({ technologists, filters }) {
       setTechnologistsList(
         technologists.filter(
           (d) =>
-            activeFilters.includes(d.expertise) &&
+            activeFilters.includes(d.role) &&
             activeFilters.includes(d.location)
         )
       );
@@ -178,10 +179,12 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
 
   return (
     <div className={className} onClick={onClick}>
+         <HitLogo/>
       <Nav />
 
-      <Title className="title m0 p0" text="Hawaiians*in&nbsp;Technology" />
+   
 
+      <Title className="title m0 p0" text="Hawaiians*in&nbsp;Technology" />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -204,12 +207,12 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
               <td
                 className="thsize-aux filterTable"
                 onClick={(e) => {
-                  handleOpenFilter("expertise");
+                  handleOpenFilter("role");
 
                   e.preventDefault();
                 }}
               >
-                Expertise <FilterSVG />
+                Role <FilterSVG />
               </td>
               <td className="thsize-link"></td>
             </tr>
@@ -220,7 +223,7 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
                 <tr key={`${d.name}-${i}`}>
                   <td><a href={d.link}>{d.name}</a></td>
                   <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
-                  <td className="thsize-aux"><a href={d.link}>{d.expertise}</a></td>
+                  <td className="thsize-aux"><a href={d.link}>{d.role}</a></td>
                   <td className="thsize-link"><a href={d.link}>→</a></td>
                 </tr>
               ))}
