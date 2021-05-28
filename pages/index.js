@@ -7,24 +7,25 @@ import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
 import Analytics from "../components/Analytics.js";
 import FilterSVG from "../components/Icons/FilterSVG.js";
+import HitLogo from "../components/HitLogo.js";
 
 export async function getStaticProps() {
   const origin =
     process.env.NODE_ENV !== "production"
       ? "http://localhost:3000"
-      : "https://brazilianswho.design/";
+      : "https://hawaiiansintech-93k9cfzcn-hawaiians.vercel.app";
 
-  const res = await fetch(`${origin}/api/designers`);
-  const designers = await res.json();
+  const res = await fetch(`${origin}/api/technologists`);
+  const technologists = await res.json();
 
-  let uniqueExpertise = new Set();
-  designers.map((d) => uniqueExpertise.add(d.expertise));
+  let uniqueRole = new Set();
+  technologists.map((d) => uniqueRole.add(d.role));
 
   let uniqueLocation = new Set();
-  designers.map((d) => uniqueLocation.add(d.location));
+  technologists.map((d) => uniqueLocation.add(d.location));
 
-  let expertises = Array.from(uniqueExpertise).map((e) => {
-    return { label: e, active: false, category: "expertise" };
+  let roles = Array.from(uniqueRole).map((e) => {
+    return { label: e, active: false, category: "role" };
   });
 
   let locations = Array.from(uniqueLocation)
@@ -33,25 +34,25 @@ export async function getStaticProps() {
       return { label: e, active: false, category: "location" };
     });
 
-  let filters = expertises.concat(locations);
+  let filters = roles.concat(locations);
 
   return {
     props: {
-      designers,
+      technologists,
       filters,
     },
   };
 }
 
-export default function Home({ designers, filters }) {
+export default function Home({ technologists, filters }) {
   const [isReady, setIsReady] = useState(false);
-  const [designersList, setDesignersList] = useState(null);
+  const [technologistsList, setTechnologistsList] = useState(null);
   const [filterIsOpen, setFilterIsOpen] = useState(false);
   const [filterList, setFilterList] = useState(filters);
   const [filterCategory, setFilterCategory] = useState(null);
 
   useEffect(() => {
-    setDesignersList(shuffle(designers).sort((a, b) => a.order - b.order));
+    setTechnologistsList(shuffle(technologists).sort((a, b) => a.order - b.order));
   }, []);
 
   // Filter
@@ -74,8 +75,8 @@ export default function Home({ designers, filters }) {
     });
 
     setFilterList(newFilter);
-    setDesignersList(
-      shuffle(designers).sort((a, b) => a.featured - b.featured)
+    setTechnologistsList(
+      shuffle(technologists).sort((a, b) => a.featured - b.featured)
     );
   };
 
@@ -86,7 +87,7 @@ export default function Home({ designers, filters }) {
 
     // Get Each column
     let filterExpert = filterList
-      .filter((f) => f.category == "expertise")
+      .filter((f) => f.category == "role")
       .map((d) => d.label);
     let filterLocation = filterList
       .filter((f) => f.category == "location")
@@ -105,10 +106,10 @@ export default function Home({ designers, filters }) {
 
     // Filter render list
     if (activeFilters.length > 0)
-      setDesignersList(
-        designers.filter(
+      setTechnologistsList(
+        technologists.filter(
           (d) =>
-            activeFilters.includes(d.expertise) &&
+            activeFilters.includes(d.role) &&
             activeFilters.includes(d.location)
         )
       );
@@ -123,14 +124,14 @@ export default function Home({ designers, filters }) {
       }}
     >
       <Head>
-        <title>Brazilians Who Design</title>
+        <title>Hawaiians in Technology</title>
         <link id="favicon" rel="alternate icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
 
       {!isReady ? (
         <Content
-          designers={designersList}
+          technologists={technologistsList}
           handleOpenFilter={handleOpenFilter}
           onClick={filterIsOpen ? handleCloseFilter : undefined}
           className={filterIsOpen ? "filterIsOpen" : ""}
@@ -158,7 +159,7 @@ export default function Home({ designers, filters }) {
   );
 }
 
-function Content({ designers, handleOpenFilter, className, onClick }) {
+function Content({ technologists, handleOpenFilter, className, onClick }) {
   const tableHeaderRef = useRef();
 
   useEffect(() => {
@@ -178,10 +179,12 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
 
   return (
     <div className={className} onClick={onClick}>
+         <HitLogo/>
       <Nav />
 
-      <Title className="title m0 p0" text="Brazilians*who&nbsp;design" />
+   
 
+      <Title className="title m0 p0" text="Hawaiians*in&nbsp;Technology" />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -204,23 +207,23 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
               <td
                 className="thsize-aux filterTable"
                 onClick={(e) => {
-                  handleOpenFilter("expertise");
+                  handleOpenFilter("role");
 
                   e.preventDefault();
                 }}
               >
-                Expertise <FilterSVG />
+                Role <FilterSVG />
               </td>
               <td className="thsize-link"></td>
             </tr>
           </thead>
-          {designers != null ? (
+          {technologists != null ? (
             <tbody>
-              {designers.map((d, i) => (
+              {technologists.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
                   <td><a href={d.link}>{d.name}</a></td>
                   <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
-                  <td className="thsize-aux"><a href={d.link}>{d.expertise}</a></td>
+                  <td className="thsize-aux"><a href={d.link}>{d.role}</a></td>
                   <td className="thsize-link"><a href={d.link}>→</a></td>
                 </tr>
               ))}

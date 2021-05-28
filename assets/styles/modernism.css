@@ -9,8 +9,8 @@ html {
 
 body {
   font-family: "Helvetica Now Display", "Helvetica Neue", "Helvetica";
-  background: #000;
-  color: #fff;
+  background: #E5E5E5;
+  color: #353535;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -73,7 +73,8 @@ table tbody tr {
 }
 
 table tbody tr:hover {
-  background: #111111;
+  /* background: #111111; */
+  color: #CC6C13;
 }
 
 /* Rethink is the best aproch */
@@ -117,7 +118,7 @@ table tbody tr:last-child td {
 }
 
 .arrowback {
-  color: #fff;
+  color: #353535;
   font-size: 3rem;
   text-decoration: none;
   cursor: pointer;
@@ -130,7 +131,7 @@ table tbody tr:last-child td {
 }
 
 a.link {
-  --color: #fff;
+  --color: #353535;
   position: relative;
   color: var(--color);
   text-decoration: none;
@@ -157,7 +158,7 @@ a.link:before {
 }
 
 a.link:hover {
-  --color: #757575;
+  --color: #CC6C13;
 }
 
 a.link:after {
@@ -171,7 +172,7 @@ a.link:after {
 .sticky tr {
   position: fixed;
   width: 95vw;
-  background: #000;
+  background: #E5E5E5;
   padding: 1.5rem 0 1rem 0;
   display: table;
   top: -4rem;
