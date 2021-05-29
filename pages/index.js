@@ -5,7 +5,6 @@ import Nav from "../components/Nav.js";
 import Filter from "../components/Filter.js";
 import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
-import Analytics from "../components/Analytics.js";
 import FilterSVG from "../components/Icons/FilterSVG.js";
 import HitLogo from "../components/HitLogo.js";
 
@@ -221,10 +220,10 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
             <tbody>
               {technologists.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
-                  <td><a href={d.link}>{d.name}</a></td>
-                  <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
-                  <td className="thsize-aux"><a href={d.link}>{d.role}</a></td>
-                  <td className="thsize-link"><a href={d.link}>→</a></td>
+                  <td><a href={d.link} target="_blank">{d.name}</a></td>
+                  <td className="thsize-aux dn"><a href={d.link} target="_blank">{d.location}</a></td>
+                  <td className="thsize-aux"><a href={d.link} target="_blank">{d.role}</a></td>
+                  <td className="thsize-link"><a href={d.link} target="_blank">→</a></td>
                 </tr>
               ))}
             </tbody>
@@ -273,7 +272,6 @@ function Content({ technologists, handleOpenFilter, className, onClick }) {
         }
       `}</style>
 
-      <Analytics />
     </div>
   );
 }

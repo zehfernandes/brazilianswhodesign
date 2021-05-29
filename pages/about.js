@@ -3,7 +3,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
-import Analytics from "../components/Analytics.js";
 
 const item = {
   hidden: { opacity: 0, y: "15%" },
@@ -49,10 +48,10 @@ export default function Home({ technologists }) {
         exit="hidden"
       >
         <p className="f1 extend">
-          <motion.span variants={item}>directory and community of Native Hawaiians</motion.span>{" "}
-          <motion.span variants={item}>in the technology industry. The goal</motion.span>{" "}
-          <motion.span variants={item}>is to connect, inspire, provide representation, and</motion.span>{" "}
-          <motion.span variants={item}>promote the precense of Native Hawaiians who work in the technology industry.</motion.span>{" "}
+          <motion.span variants={item}>directory and community of <strong>Native Hawaiians</strong> in the</motion.span>{" "}
+          <motion.span variants={item}><strong>technology industry</strong>. The goal is to connect, inspire, provide</motion.span>{" "}
+          <motion.span variants={item}>representation, and promote the presence of Native Hawaiians</motion.span>{" "}
+          <motion.span variants={item}>who work in the technology industry.</motion.span>{" "}
         </p>
       </motion.div>
 
@@ -140,7 +139,7 @@ export default function Home({ technologists }) {
                 Emmit Parubrub
               </a>
               <br></br>
-              <a className="link" href="https://twitter.com/tellaho_">
+              <a className="link" href="https://twitter.com/tellaho">
                 Taylor Ho
               </a>
           </p>
@@ -162,13 +161,12 @@ export default function Home({ technologists }) {
           
         </div>
 
-        <Analytics />
       </div>
 
       <style jsx>{`
         .extend {
           margin: 0;
-          max-width: 17ch;
+          max-width: 24ch;
         }
 
         .moreabout {
