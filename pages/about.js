@@ -22,6 +22,8 @@ const container = {
   },
 };
 
+const DISCORD_URL = "https://discord.gg/p7338Z5MJQ";
+
 export default function Home({ technologists }) {
   return (
     <div className="container">
@@ -148,7 +150,7 @@ export default function Home({ technologists }) {
           <h3>How can I get more involved with the community?</h3>
           <p>
             Currently, you can join our {" "}
-            <a className="link" href="https://discord.gg/nx8rsFfW">Hawaiians in Tech Discord</a>
+            <a className="link" href={`${DISCORD_URL}`} target="_blank">Hawaiians in Tech Discord</a>
             to connect with our community, get information on events, find new project opportunities, and more.
           </p>
           <h3>How can I remove my name?</h3>
@@ -156,7 +158,7 @@ export default function Home({ technologists }) {
             If you’ve been added to the directory and would like to opt-out or
               make an edit to your profile, please send an email to either emmit.parubrub@gmail.com or 
               howzit@tellaho.com, or send us a message in our {" "}
-              <a className="link" href="https://discord.gg/nx8rsFfW">Discord</a>.
+              <a className="link" href={`${DISCORD_URL}`} target="_blank">Discord</a>.
           </p>
           
         </div>
