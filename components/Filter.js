@@ -49,7 +49,11 @@ export default function Filter({
             categoryName.slice(1)}
         </h3>
 
-        {items.map((item, i) => (
+        {items.sort((a, b)=>{
+          if (a.label > b.label) return 1;
+          if (a.label < b.label) return -1;
+          return 0;
+        }).map((item, i) => (
           <FilterItem
             key={`${item.label}-${i}`}
             label={item.label}
