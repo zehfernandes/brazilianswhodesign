@@ -29,6 +29,7 @@ export default function Filter({
         position: "fixed",
         top: 0,
         right: 0,
+        height: "100%",
         width: "100%",
         maxWidth: "420px",
         overflowY: "scroll",
