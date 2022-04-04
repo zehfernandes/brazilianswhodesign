@@ -11,10 +11,15 @@ We encourage you to create your directory featured a list of any professionals y
 ### Link your spreedsheet
 
 1. Duplicate [this spreedhsheet template](https://docs.google.com/spreadsheets/d/12LLA-NoHin0zQfmpEblgMjd260bmriLMowBAH1QDOhI/edit)
-2. Go to File > Publish to the Web > Publish
-3. Copy the id between /spreadsheets/ and /edit in the url: 
+2. Follow [this guide](https://leerob.io/snippets/google-sheets#usage) to allow access to your Google account
+3. Create a .env file and fill the informations below
+```
+GOOGLE_PRIVATE_KEY=""
+GOOGLE_CLIENT_EMAIL=""
+```
+4. Copy the id between /spreadsheets/ and /edit in the url: 
 	> [https://docs.google.com/spreadsheets/d/__12LLA-NoHin0zQfmpEblgMjd260bmriLMowBAH1QDOhI__/edit](https://docs.google.com/spreadsheets/d/12LLA-NoHin0zQfmpEblgMjd260bmriLMowBAH1QDOhI/edit)
-4. Paste the ID in the file [`pages/api/designers.js`](https://github.com/zehfernandes/brazilianswhodesign/blob/main/pages/api/designers.js)
+5. Paste the ID in the file [`pages/api/designers.js`](https://github.com/zehfernandes/brazilianswhodesign/blob/main/pages/api/designers.js)
 
 ### Install the dependencies
 
