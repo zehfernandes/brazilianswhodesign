@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "babel-plugin-inline-react-svg": "^1.1.1",
-    "drive-db": "^6.0.0",
+    "googleapis": "^91.0.0",
     "framer-motion": "^1.11.1",
     "js-yaml": "^3.13.1",
     "next": "^11.1.2",
